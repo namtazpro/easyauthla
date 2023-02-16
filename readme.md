@@ -14,7 +14,7 @@ Body type: x-www-form-urlencoded
 - resource: https://management.azure.com
 
 ```
-https://login.microsoftonline.com/{YOUR-TENANT-ID}/oauth2/token
+GET https://login.microsoftonline.com/{YOUR-TENANT-ID}/oauth2/token
 ```
 
 Step 3: Inspect the token in jwt.io and get values:
@@ -24,6 +24,10 @@ Step 3: Inspect the token in jwt.io and get values:
 
 
 Step 4: Configure EasyAuth:
+
+```
+PUT https://management.azure.com/subscriptions/{YOUR_SUBSCRIPTION-ID}/resourcegroups/{YOUR-RG}/providers/Microsoft.Web/sites/{YOUR-LOGICAPP-NAME}/config/authsettingsV2?api-version=2021-02-01&
+```
 
 Full body here: https://techcommunity.microsoft.com/t5/integrations-on-azure-blog/trigger-workflows-in-standard-logic-apps-with-easy-auth/ba-p/3207378
 
